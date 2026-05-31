@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GIDClientID</key>
+	<string>879237083110-r0nm887q5uu6lqj8pt74c477rbal455j.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.879237083110-r0nm887q5uu6lqj8pt74c477rbal455j</string>
+			</array>
+		</dict>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Grandstander-Regular.ttf</string>
+		<string>Grandstander-Bold.ttf</string>
+		<string>Grandstander-SemiBold.ttf</string>
+		<string>Grandstander-Light.ttf</string>
+		<string>Grandstander-Medium.ttf</string>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Precisamos de acesso à câmera para tirar fotos para a denúncia.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

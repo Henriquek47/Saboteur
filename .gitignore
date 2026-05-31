@@ -1,0 +1,77 @@
+# Xcode
+#
+# Reference: https://github.com/github/gitignore/blob/main/Swift.gitignore
+
+# Build results
+build/
+DerivedData/
+
+# User settings
+*.xcuserdatad
+*.xcuserstate
+
+# Xcode State
+.objc_db
+.LSOverride
+
+# For environments where pods are not checked in
+# Pods/
+
+# Carthage
+Carthage/Build/
+
+# AccelKit
+.accelkit/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in SPM cached files
+.build/
+# Xcode SPM integration
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+.swiftpm/xcode/package.xcworkspace/xcshareddata/
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However,
+# if you wish to do so, uncomment the line below.
+# Pods/
+
+# macOS Finder & Folder configs
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two carriage returns
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on external OSes
+.Trash-*
+.nfs*
+
+# VS Code
+.vscode/
+
+# API keys & Secrets
+*.env
+*.env.*
+*.private.plist
+Secrets.plist

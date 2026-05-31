@@ -1,0 +1,33 @@
+# Saboteur SwiftLint Configuration
+
+# Rules to exclude by default to avoid too many noisy warnings initially
+disabled_rules:
+  - line_length
+  - trailing_whitespace
+  - force_cast
+  - force_try
+  - colon
+  - opening_brace
+
+# Opt-in rules to enforce modern Swift practices
+opt_in_rules:
+  - empty_count
+  - contains_over_first_not_nil
+  - discouraged_object_literal
+  - duplicate_imports
+  - empty_string
+  - empty_xctest_method
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - vertical_whitespace_closing_braces
+
+# Paths to include in the analysis
+included:
+  - Saboteur
+  - SaboteurTests
+  - SaboteurUITests
+
+# Paths to ignore (like third-party libraries if they are added in the future)
+excluded:
+  - Carthage
+  - Pods
