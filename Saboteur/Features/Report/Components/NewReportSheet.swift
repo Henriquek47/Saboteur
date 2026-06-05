@@ -65,7 +65,8 @@ struct NewReportSheet: View {
             VStack(spacing: 12) {
               ForEach(selectableMembers) { user in
                 let isSelected = user.userId == selectedMemberId
-                let rank = (viewModel.members.firstIndex(where: { $0.userId == user.userId }) ?? 0) + 1
+                let rank =
+                  (viewModel.members.firstIndex(where: { $0.userId == user.userId }) ?? 0) + 1
 
                 Button {
                   withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
@@ -296,7 +297,7 @@ struct NewReportSheet: View {
           .font(.grandstander(fontStyle: .body, fontWeight: .bold))
           .foregroundStyle(Color.accentRed)
           .padding(.vertical, 8)
-          .padding(.trailing, 12)
+          .padding(.trailing, 8)
         }
       }
       .toolbarColorScheme(.dark, for: .navigationBar)
