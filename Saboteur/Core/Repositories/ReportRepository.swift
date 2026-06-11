@@ -35,4 +35,12 @@ class ReportRepository {
 
     return try await apiClient.post(endpoint: "/reports", body: payload)
   }
+
+  func listReports(page: Int = 1, pageSize: Int = 20) async throws -> PaginatedResponse<ReportModel> {
+    try await apiClient.get(endpoint: "/reports?page=\(page)&page_size=\(pageSize)")
+  }
+
+  func deleteReport(id: String) async throws {
+    try await apiClient.delete(endpoint: "/reports/\(id)")
+  }
 }

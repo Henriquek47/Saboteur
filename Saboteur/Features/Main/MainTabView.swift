@@ -13,7 +13,7 @@ struct MainTabView: View {
 
   var body: some View {
     Group {
-      if viewModel.groupManager.isLoading {
+      if viewModel.groupManager.isResolvingGroup {
         LoadingView()
       } else if viewModel.groupManager.hasError {
         ErrorView {

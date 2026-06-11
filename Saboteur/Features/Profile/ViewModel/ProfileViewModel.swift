@@ -31,6 +31,15 @@ class ProfileViewModel {
     userProfileDto?.user.name ?? authManager.user?.displayName ?? "Usuário"
   }
 
+  var currentUserId: String? {
+    authManager.user?.uid
+  }
+
+  var isCurrentUserAdmin: Bool {
+    guard let group = groupManager.group, let userId = currentUserId else { return false }
+    return group.adminMemberUserId == userId
+  }
+
   var score: Int {
     userProfileDto?.member?.score ?? 0
   }

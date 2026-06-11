@@ -40,8 +40,19 @@ class HomeViewModel {
     groupManager.group?.reports.count ?? 0
   }
 
+  var isCurrentUserAdmin: Bool {
+    guard let group = groupManager.group, let userId = currentUserId else { return false }
+    return group.adminMemberUserId == userId
+  }
+
   var weeklyPoints: [PointData] = []
   var isLoadingChart: Bool = false
+
+  func refresh() async {
+    async let groupLoad: Void = groupManager.loadGroup()
+    async let chartLoad: Void = loadWeeklyPoints()
+    _ = await (groupLoad, chartLoad)
+  }
 
   func loadWeeklyPoints() async {
     isLoadingChart = true

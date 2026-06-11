@@ -13,13 +13,18 @@ class GroupManager {
   var group: GroupDtoModel? = nil
   var isLoading: Bool = false
   var hasError: Bool = false
+  private(set) var hasInitiallyLoaded: Bool = false
 
   var hasGroup: Bool { group != nil }
+  var isResolvingGroup: Bool { isLoading || !hasInitiallyLoaded }
 
   func loadGroup(isInitialLoad: Bool = false) async {
-    isLoading = isInitialLoad
+    isLoading = isInitialLoad || !hasInitiallyLoaded
     hasError = false
-    defer { isLoading = false }
+    defer {
+      isLoading = false
+      hasInitiallyLoaded = true
+    }
     do {
       group = try await groupRepository.getMyGroup()
     } catch ApiClientError.requestFailed(404) {

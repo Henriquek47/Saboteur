@@ -9,10 +9,11 @@ import SwiftUI
 
 struct LoadingView: View {
   var message: String = "Carregando..."
+  var backgroundColor: Color = .primaryTheme
 
   var body: some View {
     ZStack {
-      Color.primaryTheme.ignoresSafeArea()
+      backgroundColor.ignoresSafeArea()
       VStack(spacing: 16) {
         ProgressView()
           .progressViewStyle(.circular)

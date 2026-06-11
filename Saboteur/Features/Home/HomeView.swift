@@ -16,6 +16,13 @@ struct HomeView: View {
       VStack(spacing: 24) {
         HeaderSectionView(userName: homeViewModel.userName, points: homeViewModel.myPoints)
 
+        if homeViewModel.isCurrentUserAdmin {
+          AdminActionsSectionView(
+            onManageReports: { router.navigate(to: .adminManageReports) },
+            onManageTasks: { router.navigate(to: .adminManageTasks) }
+          )
+        }
+
         RankListView(
           rankList: homeViewModel.rankList,
           currentUserId: homeViewModel.currentUserId
@@ -48,8 +55,11 @@ struct HomeView: View {
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(uiColor: .systemGroupedBackground))
+    .refreshable {
+      await homeViewModel.refresh()
+    }
     .task {
-      await homeViewModel.loadWeeklyPoints()
+      await homeViewModel.refresh()
     }
   }
 }

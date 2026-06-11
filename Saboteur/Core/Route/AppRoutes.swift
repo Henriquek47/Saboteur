@@ -16,6 +16,8 @@ enum AppRoute: Hashable {
     case profile
     case settings
     case termsOfUse
+    case adminManageReports
+    case adminManageTasks
     case detail(id: String)
     
     @ViewBuilder
@@ -35,6 +37,10 @@ enum AppRoute: Hashable {
             Text("")
         case .termsOfUse:
             TermsOfUseView()
+        case .adminManageReports:
+            AdminManageReportsView()
+        case .adminManageTasks:
+            AdminManageTasksView()
         case .detail(let id):
             Text("")
         }
